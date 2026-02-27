@@ -16,12 +16,20 @@ import {
 import type { NavItem } from '@/types';
 import AppLogo from './AppLogo.vue';
 import { dashboard } from '@/routes';
+import task from '@/routes/task';
 
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
+    },
+    {
+        title: 'Task',
+        // arahkan ke halaman task
+        href: '/task',
+        // href: task(),
+        icon: Folder,
     },
 ];
 

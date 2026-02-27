@@ -1,3 +1,5 @@
+import { GenericObject } from 'vee-validate';
+
 export type User = {
     id: number;
     name: string;
@@ -10,6 +12,7 @@ export type User = {
 };
 
 export type Auth = {
+    post(arg0: string, values: GenericObject): unknown;
     user: User;
 };
 

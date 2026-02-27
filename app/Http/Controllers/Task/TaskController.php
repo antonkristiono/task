@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Task;
 use App\Http\Controllers\Controller;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class TaskController extends Controller
 {
@@ -12,7 +13,8 @@ class TaskController extends Controller
     {
         // return with inertia
         return inertia('Task/Index' , [
-            'tasks' => Task::all()
+                'tasks' => Schema::hasTable('tasks') ? Task::get() : []
+
         ]);
     }
 
