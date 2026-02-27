@@ -1,4 +1,3 @@
-<!-- make model Task -->
 <?php
 
 namespace App\Models;
