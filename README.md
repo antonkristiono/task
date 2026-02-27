@@ -5,3 +5,10 @@ Mohon maaf ternyata setelah saya ingin fetch ke BE , formatnya adalah rest api +
 - yang jadi pembeda adalah tahap viewnya terpisah di project vue sendiri bisa membuat project dari vite
 - di bagian Laravel file route jadi di api.php untuk routing menjadi format json ( interia mengarahakan ke route di resource view dengan logika di controller)
 - di bagian controller juga harus di ubah kalau ingin menjadi laravel rest api, yang saya buat mengarah ke inertia
+
+untuk menjalan app silahkan:
+
+1. cp .env.example .env
+2. php artisan key:generate
+3. php artisan migrate
+4. composer run dev
