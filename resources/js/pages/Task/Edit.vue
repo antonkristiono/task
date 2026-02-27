@@ -5,22 +5,30 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useForm, Head } from '@inertiajs/vue3';
 
+const props = defineProps<{
+    task: {
+        id: number;
+        title: string;
+        description: string;
+    };
+}>();
+
 const form = useForm({
-    title: '',
-    description: '',
+    title: props.task.title || '',
+    description: props.task.description || '',
 });
 
 const handleSubmit = () => {
-    form.post('/task');
+    form.put(`/task/${props.task.id}`);
 };
 </script>
 
 <template>
-    <Head title="Create Task" />
+    <Head title="Edit Task" />
 
     <AppLayout>
         <div class="mx-auto max-w-2xl p-4">
-            <h1 class="mb-4 text-3xl font-bold">Create Task</h1>
+            <h1 class="mb-4 text-3xl font-bold">Edit Task</h1>
             <form @submit.prevent="handleSubmit" class="space-y-6">
                 <div>
                     <Input
@@ -44,7 +52,7 @@ const handleSubmit = () => {
                     class="w-full"
                     :disabled="form.processing"
                 >
-                    Create Task
+                    Update Task
                 </Button>
             </form>
         </div>
